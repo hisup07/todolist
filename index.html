@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+    .alertDismiss{
+        display: none
+    }
+    </style>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -19,8 +24,55 @@
     <title>Todo List</title>
   </head>
   <body>
-    <h1>Todo List App</h1>
-    <script src="app.js"></script>
+    <nav class="navbar navbar-inverse bg-primary fixed-top">
+      <h4 class="navbar-branding text-white  m-auto">
+        <i class="fas fa-list-ul mr-2"></i><span>Todo List</span>
+      </h4>
+    </nav>
+    <div class="container mt-5" id="create-todo">
+      <div class="jumbotron mt-0">
+        
+        
+        <a href="#todolist" class="mt-0"><p class="lead mt-0">
+                Your Todos Here !
+              </p></a>
+              <hr class="mt-0" />
+              <p class="lead mt-0">
+                    Create Your Todos Here !
+             </p>
+             <div class="alert alertDismiss alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Please Fill both the fileds.</strong>
+                    
+                  </div>
+        <form id="todoform">
+            <div class="form-group">
+                <label>Name:</label>
+                <Input class="form-control" type="text" id="todoName" placeholder="Enter Name of the task"></Input>
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <textarea class="form-control" type="text" id="todoDescription" placeholder="Enter Name of the task"></textarea>
+            </div>
+            <input type="submit" value="Create Todo" class="btn btn-primary btn-block addTodo"  />
+        </form>
+      </div>
+    </div>
+    <div class="container" id="todolist">
+            <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        
+                        <th scope="col">Name</th>
+                        <th scope="col">Details</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody class="tabblebody">
+                      
+                    </tbody>
+                  </table>
+    </div>
+    <script src="main.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
